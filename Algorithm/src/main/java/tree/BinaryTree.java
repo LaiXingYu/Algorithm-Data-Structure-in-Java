@@ -12,7 +12,7 @@ public class BinaryTree <T extends Comparable<T>> extends Tree<T>{
     }
 
     public BinaryTree(T[] values){
-        build(values);
+        buildTree(values);
     }
     @Override
     public void printTree() {
@@ -42,7 +42,7 @@ public class BinaryTree <T extends Comparable<T>> extends Tree<T>{
     public static void main(String[] args) {
         Integer[] values = {4, 2, 1, 3, 6, 5, 7};
         BinaryTree<Integer> tree = new BinaryTree<>();
-        tree.build(values);
+        tree.buildTree(values);
         List<Integer> preOrder = tree.inOrder();
         preOrder.forEach(row-> System.out.print(row + " "));
     }

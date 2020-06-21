@@ -56,7 +56,7 @@ public abstract class Tree<T extends Comparable<T>> {
             inOrder(root.getLeft(), record);
         }
         record.add(root.getValue());
-        if (root.getLeft() != null) {
+        if (root.getRight() != null) {
             inOrder(root.getRight(), record);
         }
     }
@@ -90,13 +90,11 @@ public abstract class Tree<T extends Comparable<T>> {
     public abstract void printTree();
 
     /**
+     * @param root 需要计算树高度的根节点
+     *
      * @return 返回树的高度
      */
-    public int getHeight() {
-        return getHeight(this.root);
-    }
-
-    private int getHeight(Node root) {
+    public int getHeight(Node root) {
         if (root == null) {
             return 0;
         }
@@ -110,7 +108,7 @@ public abstract class Tree<T extends Comparable<T>> {
      *
      * @param values 树节点的值
      */
-    public void build(T[] values) {
+    public void buildTree(T[] values) {
         this.root = buildTree(this.root, values);
     }
     /**
