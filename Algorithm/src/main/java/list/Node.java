@@ -6,7 +6,8 @@ package list;
  */
 public class Node<T> {
     private T value;
-    private Node next;
+    private Node<T> next;
+    private Node<T> previous;
 
     public Node(T value) {
         this.value = value;
@@ -27,7 +28,7 @@ public class Node<T> {
         return value;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 }
